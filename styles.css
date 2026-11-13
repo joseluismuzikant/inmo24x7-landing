@@ -504,8 +504,8 @@ p { text-wrap: pretty; }
 .legal th, .legal td { text-align: left; vertical-align: top; padding: 12px 16px; border-bottom: 1px solid var(--line); color: var(--ink-2); }
 .legal th { background: var(--surface-2); color: var(--ink); font-weight: 600; font-size: .85rem; }
 .legal tbody tr:last-child td { border-bottom: 0; }
-.legal td:first-child { color: var(--ink); font-weight: 600; white-space: nowrap; }
-.legal td:last-child { white-space: nowrap; }
+.providers td:first-child { color: var(--ink-3); font-size: .86rem; }
+.providers td:nth-child(2) { color: var(--ink); font-weight: 600; }
 .legal-notice { margin-top: 20px; padding: 18px 20px; border-left: 4px solid var(--blue-900); background: #eff6ff; border-radius: 0 10px 10px 0; font-size: .93rem; }
 .notfound { text-align: left; min-height: 40vh; }
 .notfound p { margin-bottom: 28px; }
@@ -594,7 +594,7 @@ p { text-wrap: pretty; }
   .providers tbody tr:last-child { border-bottom: 0; }
   .providers td { display: block; padding: 0; border: 0; }
   .providers td + td { margin-top: 4px; }
-  .providers td:last-child::before { content: "País: "; color: var(--ink-3); }
+  .providers td:first-child { font-size: .78rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
 }
 
 @media (max-width: 380px) {
