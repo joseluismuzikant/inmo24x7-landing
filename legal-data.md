@@ -21,16 +21,20 @@ they are written literally in the HTML. If one changes, update it everywhere it 
 | CIUDAD | Footer of every page; Términos (intro, contacto); Acuerdo (partes); JSON-LD; `llms.txt` |
 | TELEFONO | Header "Pedir una demo" link, footer, home CTAs and floating button, legal pages' contact lines, JSON-LD, `llms.txt` |
 | EMAIL | Everywhere a contact is shown |
-| MODELO_IA | **One row** of the provider table in `privacidad/index.html` (marked `<!-- MODELO_IA -->`). The Acuerdo de tratamiento de datos links to that table instead of copying it. If the new provider is in another country, also update "Estados Unidos y China" in Privacidad §7 and Acuerdo §8. |
+| MODELO_IA | **Not published.** The site says only "Proveedor de modelo de inteligencia artificial" (Privacidad §6 table, Acuerdo §7 list), with no brand and no countries. Keep the real name here for your own reference; switching provider needs no change on the site. |
 
 The footer is the block between `<!-- site-footer` and `<!-- /site-footer -->`, and the header
 the block between `<!-- site-header` and `<!-- /site-header -->`. Both must be identical on every
 page: `index.html`, `terminos/`, `privacidad/`, `eliminacion-de-datos/`,
 `acuerdo-de-tratamiento-de-datos/` and `404.html`.
 
-"Cuentas Claras" is a separate product and must not appear on this site.
+"Cuentas Claras" is a separate product and must not appear on this site. The AI provider's
+name and the providers' countries must not appear on the published site either.
+
+The provider table in `privacidad/index.html` (§6) and the subprocessor list in
+`acuerdo-de-tratamiento-de-datos/index.html` (§7) must list the same providers.
 
 Run `./check.sh` before publishing. It fails if a visible `TODO_` remains (hidden
 `<!-- TODO_ABOGADO -->` comments are allowed and listed), if the old phone number reappears,
-if the street address appears outside `/privacidad/`, if "Cuentas Claras" appears, or if the
-header or footer differ between pages.
+if the street address appears outside `/privacidad/`, if "Cuentas Claras", the AI provider's
+name or "China" appears in a published file, or if the header or footer differ between pages.
