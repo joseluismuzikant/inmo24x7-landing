@@ -1,512 +1,563 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-AR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inmo24x7 — Tu inmobiliaria atendida 24x7 | Asistente Virtual WhatsApp</title>
+    <title>Inmo24x7 — Agente de WhatsApp para inmobiliarias, 24x7</title>
     <meta
       name="description"
-      content="Inmo24x7 atiende WhatsApp 24/7, califica interesados y agenda visitas para inmobiliarias. Nunca más pierdas un lead. Demo gratuita."
+      content="Inmo24x7 responde las consultas de WhatsApp de tu inmobiliaria al instante, las 24 horas, con la API oficial de WhatsApp Business: califica al interesado, le muestra propiedades de tu catálogo y propone horarios de visita."
     />
-    <meta property="og:title" content="Inmo24x7 — Tu inmobiliaria atendida 24x7" />
+    <link rel="canonical" href="https://www.inmo24x7.com/" />
+    <meta name="theme-color" content="#0b1530" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:site_name" content="Inmo24x7" />
+    <meta property="og:url" content="https://www.inmo24x7.com/" />
+    <meta property="og:title" content="Inmo24x7 — Tu inmobiliaria responde WhatsApp 24x7" />
     <meta
       property="og:description"
-      content="Atiende WhatsApp 24/7, filtra interesados y no pierdas más leads. Demo gratuita."
+      content="Califica al interesado, le muestra propiedades de tu catálogo y propone horarios de visita. Con la API oficial de WhatsApp Business."
     />
-    <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#1E3A8A" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css" />
+    <meta property="og:image" content="https://www.inmo24x7.com/images/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://www.inmo24x7.com/images/og.png" />
+
+    <link rel="preload" href="/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/styles.css" />
+    <script>document.documentElement.classList.add('js');</script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.inmo24x7.com/#org",
+            "name": "Inmo24x7",
+            "legalName": "José Luis Muzikant",
+            "taxID": "20-26474739-3",
+            "url": "https://www.inmo24x7.com/",
+            "logo": "https://www.inmo24x7.com/favicon.svg",
+            "email": "contacto@inmo24x7.com",
+            "telephone": "+54 9 11 5106-0793",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Ciudad Autónoma de Buenos Aires",
+              "addressCountry": "AR"
+            }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "Inmo24x7",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "inLanguage": "es-AR",
+            "description": "Agente de WhatsApp para inmobiliarias que responde consultas 24x7 con la API oficial de WhatsApp Business, califica al interesado, muestra propiedades del catálogo de la inmobiliaria y propone horarios de visita.",
+            "publisher": { "@id": "https://www.inmo24x7.com/#org" },
+            "offers": [
+              { "@type": "Offer", "name": "Prueba gratis (14 días)", "price": "0", "priceCurrency": "USD" },
+              { "@type": "Offer", "name": "Inmobiliaria (precio fundador)", "price": "49", "priceCurrency": "USD" }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
 
   <body>
-    <!-- Navigation -->
-    <nav class="nav">
-      <div class="nav-container">
-        <a href="#" class="nav-brand">
-          <div class="logo">🏠</div>
-          <span>Inmo24x7</span>
+    <!-- Icon sprite -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <defs>
+        <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+        <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.4A8.4 8.4 0 1 1 21 11.5z"/></symbol>
+        <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+        <symbol id="i-filter" viewBox="0 0 24 24"><path d="M3 5h18l-7 8.5V19l-4 2v-7.5z"/></symbol>
+        <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+        <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M9 15l2 2 4-4"/></symbol>
+        <symbol id="i-hand" viewBox="0 0 24 24"><path d="M18 11V6a2 2 0 0 0-4 0v5M14 10V4a2 2 0 0 0-4 0v6M10 10.5V6a2 2 0 0 0-4 0v8a8 8 0 0 0 16 0v-3a2 2 0 0 0-4 0"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+        <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></symbol>
+        <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+        <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+        <symbol id="i-repeat" viewBox="0 0 24 24"><path d="M17 2l4 4-4 4M3 11V9a3 3 0 0 1 3-3h15M7 22l-4-4 4-4M21 13v2a3 3 0 0 1-3 3H3"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+        <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></symbol>
+        <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></symbol>
+        <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 2v6M15 2v6M6 8h12v4a6 6 0 0 1-12 0zM12 18v4"/></symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+        <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+        <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5"/></symbol>
+        <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+      </defs>
+    </svg>
+
+    <a href="#main" class="skip-link">Saltar al contenido</a>
+
+    <!-- site-header: identical on every page -->
+    <header class="nav">
+      <div class="nav-inner wrap">
+        <a href="/" class="brand" aria-label="Inmo24x7, inicio">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M7 15 16 7.5 25 15v9a1 1 0 0 1-1 1h-5.5v-6h-5v6H8a1 1 0 0 1-1-1z" fill="currentColor"/></svg></span>
+          <span class="brand-name">Inmo24x7</span>
         </a>
-        <div class="nav-links">
-          <a href="#beneficios">Beneficios</a>
-          <a href="#como-funciona">Cómo Funciona</a>
-          <a href="#precios">Precios</a>
-          <a href="#faq">FAQ</a>
-          <a href="https://backoffice.inmo24x7.com/login" class="nav-cta" target="_blank" rel="noreferrer">Back Office</a>
-        </div>
-        <button class="nav-toggle" aria-label="Menu">
-          <span></span>
-          <span></span>
-          <span></span>
+
+        <nav class="nav-links" id="nav-links" aria-label="Principal">
+          <a href="/#como-funciona">Cómo funciona</a>
+          <a href="/#funciones">Funciones</a>
+          <a href="/#precios">Precios</a>
+          <a href="/#faq">Preguntas</a>
+          <a href="https://app.inmo24x7.com" class="nav-login">Ingresar</a>
+          <a href="https://wa.me/5491151060793?text=Hola%20Inmo24x7%2C%20quiero%20una%20demo" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Pedir una demo</a>
+        </nav>
+
+        <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
         </button>
       </div>
-    </nav>
+    </header>
+    <!-- /site-header -->
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="hero-glow"></div>
-      <div class="wrap">
-        <div class="hero-badge">
-          <span class="badge-icon">🚀</span>
-          <span>Nuevo: Integración con WhatsApp Business</span>
-        </div>
-        
-        <h1 class="hero-title">
-          Tu inmobiliaria vende<br />
-          <span class="gradient-text">mientras dormís</span>
-        </h1>
-        
-        <p class="hero-subtitle">
-          Inmo24x7 responde WhatsApp automáticamente, califica leads en tiempo real y agenda visitas 
-          sin que tengas que levantar un dedo. La tecnología que tu competencia ya está usando.
-        </p>
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow eyebrow-dark">
+              <span class="dot" aria-hidden="true"></span>
+              Con la API oficial de WhatsApp Business
+            </p>
+            <h1>
+              Tu inmobiliaria responde WhatsApp <span class="hl">24x7</span>, también mientras dormís
+            </h1>
+            <p class="lead">
+              Inmo24x7 contesta cada consulta al instante, le pregunta al interesado qué busca, le muestra propiedades
+              de <strong>tu</strong> catálogo y le propone horarios de visita. Tu equipo recibe el aviso, confirma y cierra.
+            </p>
 
-        <div class="hero-stats">
-          <div class="stat-item">
-            <div class="stat-number">40%</div>
-            <div class="stat-label">más leads convertidos</div>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item">
-            <div class="stat-number">0</div>
-            <div class="stat-label">minutos de espera</div>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item">
-            <div class="stat-number">24/7</div>
-            <div class="stat-label">atención automática</div>
-          </div>
-        </div>
+            <div class="hero-cta">
+              <a href="https://wa.me/5491151060793?text=Hola%2C%20quiero%20probar%20inmo24x7%20gratis" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+                Probalo 14 días gratis
+                <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+              </a>
+              <a href="mailto:contacto@inmo24x7.com?subject=Quiero%20conocer%20Inmo24x7" class="btn btn-ghost btn-lg">
+                <svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>
+                Contactar por email
+              </a>
+            </div>
 
-        <div class="hero-cta">
-          <a href="https://wa.me/+541151069793?text=Hola%20Inmo24x7%2C%20quiero%20una%20demo%20gratuita" 
-             class="btn btn-lg btn-primary" target="_blank" rel="noreferrer">
-            <span>Probar Demo Gratis</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
-          <a href="mailto:contacto@inmo24x7.com" class="btn btn-lg btn-secondary">
-            <span>Contactar por Email</span>
-          </a>
-        </div>
-
-        <div class="trust-badges">
-          <span class="trust-text">Confían en nosotros:</span>
-          <div class="trust-icons">
-            <span>🏢</span>
-            <span>🏗️</span>
-            <span>🏬</span>
+            <ul class="hero-points">
+              <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Sin tarjeta</li>
+              <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Podés usar tu número actual</li>
+              <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Cancelás cuando quieras</li>
+            </ul>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Problem/Solution Section -->
-    <section id="beneficios" class="section-light">
-      <div class="wrap">
-        <div class="section-header">
-          <span class="section-tag">El Problema</span>
-          <h2 class="section-title">¿Te suena familiar?</h2>
-        </div>
-
-        <div class="problems-grid">
-          <div class="problem-card">
-            <div class="problem-icon">😴</div>
-            <h3>Pierdes leads fuera de horario</h3>
-            <p>El 60% de las consultas llegan después de las 18hs. Cuando respondés al día siguiente, ya contrataron a tu competencia.</p>
-          </div>
-          <div class="problem-card">
-            <div class="problem-icon">⏰</div>
-            <h3>Perdés tiempo en curiosos</h3>
-            <p>El 70% de las consultas son de gente sin intención real de comprar. Tu tiempo vale oro, no lo gastes en calificar manualmente.</p>
-          </div>
-          <div class="problem-card">
-            <div class="problem-icon">📱</div>
-            <h3>Respondés demasiado tarde</h3>
-            <p>Si tardás más de 5 minutos en responder, la probabilidad de conversión cae un 400%. El cliente ya se fue.</p>
+          <!-- Phone mock with an example conversation -->
+          <div class="hero-visual">
+            <div class="phone" role="img" aria-label="Conversación de ejemplo: a las 23:47 una persona consulta por un departamento en Palermo; la asistente Sofía le pregunta qué busca, le muestra dos propiedades del catálogo, le propone horarios de visita y le avisa que el equipo la va a confirmar.">
+              <div class="phone-head">
+                <span class="avatar" aria-hidden="true">S</span>
+                <div>
+                  <strong>Sofía · Inmobiliaria Sur</strong>
+                  <span class="online">ejemplo de conversación</span>
+                </div>
+              </div>
+              <div class="phone-body" id="chat" aria-hidden="true">
+                <div class="msg in" data-step>Hola! Vi un 2 ambientes en Palermo. ¿Sigue disponible?<time>23:47</time></div>
+                <div class="msg out" data-step>¡Hola! Soy Sofía, de Inmobiliaria Sur. ¿Lo buscás para alquilar o comprar? ¿Hasta cuánto querés pagar?<time>23:47</time></div>
+                <div class="msg in" data-step>Alquilar. Hasta 900 mil más o menos<time>23:48</time></div>
+                <div class="msg out" data-step>
+                  Te muestro lo que tenemos en Palermo:
+                  <span class="prop"><b>2 amb. con balcón · Gorriti 4800</b><small>$850.000/mes · <u>Ver publicación</u></small></span>
+                  <span class="prop"><b>2 amb. luminoso · Thames 1500</b><small>$890.000/mes · <u>Ver publicación</u></small></span>
+                  <time>23:48</time>
+                </div>
+                <div class="msg out" data-step>¿Querés visitar el de Gorriti? Puedo proponerle al equipo estos horarios:
+                  <span class="slots"><span>Mié 10:00</span><span class="picked">Jue 17:00</span></span>
+                  <time>23:48</time>
+                </div>
+                <div class="msg in" data-step>Jue 17:00. Soy Lucía<time>23:49</time></div>
+                <div class="msg out" data-step>¡Gracias, Lucía! Le aviso al equipo para que te confirme la visita.<time>23:49</time></div>
+                <div class="typing" aria-hidden="true"><span></span><span></span><span></span></div>
+              </div>
+            </div>
+            <div class="toast" id="toast" aria-hidden="true">
+              <span class="toast-ico"><svg class="ico"><use href="#i-mail"/></svg></span>
+              <span><strong>Aviso al equipo: visita propuesta</strong><small>Lucía · Alquiler · Gorriti 4800 · Jue 17:00</small></span>
+            </div>
           </div>
         </div>
+      </section>
 
-        <div class="solution-box">
-          <div class="solution-content">
-            <span class="solution-tag">La Solución</span>
-            <h3>Inmo24x7 trabaja 24/7 por vos</h3>
-            <p>Nuestro asistente virtual atiende WhatsApp instantáneamente, hace las preguntas clave y solo te pasa los leads calificados. Vos cerrás las ventas, nosotros filtramos el ruido.</p>
-            <a href="https://wa.me/+541151069793?text=Hola%20Inmo24x7%2C%20quiero%20ver%20cómo%20funciona" 
-               class="btn btn-primary" target="_blank" rel="noreferrer">
-              Ver Cómo Funciona
+      <!-- Strip -->
+      <section class="strip" aria-label="Lo esencial">
+        <div class="wrap strip-inner">
+          <span><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg>API oficial de WhatsApp Business</span>
+          <span><svg class="ico" aria-hidden="true"><use href="#i-upload"/></svg>Tu catálogo por planilla CSV o Excel</span>
+          <span><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>Avisos al equipo por email</span>
+          <span><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Hecho en Buenos Aires</span>
+        </div>
+      </section>
+
+      <!-- Problem -->
+      <section id="beneficios" class="section">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="eyebrow">El problema</p>
+            <h2>¿Te suena familiar?</h2>
+            <p class="sub">Las consultas llegan por WhatsApp a cualquier hora. Tu equipo trabaja en horario de oficina.</p>
+          </div>
+
+          <div class="cards-3">
+            <article class="card">
+              <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-moon"/></svg></span>
+              <h3>Consultas fuera de horario</h3>
+              <p>¿Cuántas te llegan de noche o el fin de semana? Cuando respondés al otro día, el interesado quizás ya habló con otra inmobiliaria.</p>
+            </article>
+            <article class="card">
+              <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg></span>
+              <h3>Respuestas que llegan tarde</h3>
+              <p>Quien busca casa suele escribirle a varias inmobiliarias a la vez. La que responde primero suele quedarse con la conversación.</p>
+            </article>
+            <article class="card">
+              <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-repeat"/></svg></span>
+              <h3>Siempre las mismas preguntas</h3>
+              <p>¿Alquiler o compra? ¿Qué zona? ¿Cuántos ambientes? ¿Presupuesto? Mucho chat antes de saber qué necesita cada persona.</p>
+            </article>
+          </div>
+
+          <div class="solution">
+            <div>
+              <p class="eyebrow eyebrow-dark">La solución</p>
+              <h3>Un asistente que responde por tu inmobiliaria, con tus propiedades y tus reglas</h3>
+              <p>Atiende cada consulta al instante, hace las preguntas que elegiste y le avisa a tu equipo con lo que la persona busca y cuándo quiere visitar. Vos cerrás la operación.</p>
+            </div>
+            <a href="#como-funciona" class="btn btn-primary">
+              Ver cómo funciona
+              <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
             </a>
           </div>
-          <div class="solution-visual">
-            <div class="chat-preview">
-              <div class="chat-message received">
-                <div class="chat-bubble">Hola, vi el departamento en Belgrano. ¿Está disponible?</div>
-                <div class="chat-time">23:45</div>
+        </div>
+      </section>
+
+      <!-- How it works -->
+      <section id="como-funciona" class="section section-alt">
+        <div class="wrap">
+          <div class="section-head center">
+            <p class="eyebrow">Cómo funciona</p>
+            <h2>De la consulta a la visita propuesta</h2>
+            <p class="sub">Esto pasa con cada mensaje que entra a tu WhatsApp, a cualquier hora.</p>
+          </div>
+
+          <ol class="flow">
+            <li>
+              <span class="flow-n">1</span>
+              <h3>Responde</h3>
+              <p>Al instante, con el nombre y el tono que elegiste.</p>
+            </li>
+            <li>
+              <span class="flow-n">2</span>
+              <h3>Califica</h3>
+              <p>Operación, zona, ambientes, presupuesto, nombre y contacto.</p>
+            </li>
+            <li>
+              <span class="flow-n">3</span>
+              <h3>Muestra propiedades</h3>
+              <p>Solo de tu catálogo.</p>
+            </li>
+            <li>
+              <span class="flow-n">4</span>
+              <h3>Propone horarios</h3>
+              <p>Dentro del horario de tu equipo.</p>
+            </li>
+            <li>
+              <span class="flow-n">5</span>
+              <h3>Te avisa</h3>
+              <p>Tu equipo recibe un email y confirma la visita.</p>
+            </li>
+          </ol>
+
+          <div class="setup">
+            <div class="setup-head">
+              <h3>Y empezar es simple</h3>
+              <p>Lo dejás funcionando en el día, una vez aprobada la conexión con WhatsApp.</p>
+            </div>
+            <div class="setup-grid">
+              <div class="setup-step">
+                <svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg>
+                <div><h4>Nos escribís</h4><p>Te damos acceso al panel y te acompañamos en la configuración.</p></div>
               </div>
-              <div class="chat-message sent">
-                <div class="chat-bubble">¡Hola! Sí, tenemos disponibilidad. ¿Buscas para compra o alquiler? 💬</div>
-                <div class="chat-time">23:45</div>
+              <div class="setup-step">
+                <svg class="ico" aria-hidden="true"><use href="#i-sliders"/></svg>
+                <div><h4>Armás tu asistente</h4><p>Nombre, tono, preguntas y el horario de tu equipo.</p></div>
               </div>
-              <div class="chat-message sent">
-                <div class="chat-bubble">Tengo estas opciones en Belgrano desde $850.000. ¿Te interesa agendar una visita?</div>
-                <div class="chat-time">23:46</div>
+              <div class="setup-step">
+                <svg class="ico" aria-hidden="true"><use href="#i-upload"/></svg>
+                <div><h4>Cargás tus propiedades</h4><p>Con una planilla CSV o Excel, o de a una.</p></div>
               </div>
-              <div class="chat-typing">
-                <span></span><span></span><span></span>
+              <div class="setup-step">
+                <svg class="ico" aria-hidden="true"><use href="#i-plug"/></svg>
+                <div><h4>Conectás WhatsApp</h4><p>Tu número actual o uno nuevo, con la API oficial de WhatsApp Business.</p></div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Features Grid -->
-    <section class="section-features">
-      <div class="wrap">
-        <div class="section-header center">
-          <span class="section-tag">Características</span>
-          <h2 class="section-title">Todo lo que necesitás,<br />nada de lo que no</h2>
-          <p class="section-subtitle">Diseñado específicamente para inmobiliarias que quieren vender más sin contratar más gente.</p>
-        </div>
-
-        <div class="features-grid">
-          <div class="feature-card large">
-            <div class="feature-icon">⚡</div>
-            <h3>Respuesta Instantánea</h3>
-            <p>Responde en menos de 3 segundos, 24/7. Nunca más un lead esperando.</p>
-            <div class="feature-meta">
-              <span class="meta-badge">Tiempo promedio: 2.3s</span>
+      <!-- Product -->
+      <section id="producto" class="section">
+        <div class="wrap">
+          <div class="showcase">
+            <div class="showcase-copy">
+              <p class="eyebrow">El panel</p>
+              <h2 class="showcase-title">Lo que hay que atender hoy, en una pantalla</h2>
+              <p>Cada consulta con su estado y lo que la persona busca. Arriba, los números de la semana: consultas recibidas, cuántas llegaron fuera de horario, cuántas están calificadas y cuántas visitas se propusieron.</p>
+              <ul class="ticks">
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Estados claros: calificando, visita propuesta, pidió hablar con alguien, visita confirmada</li>
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Con «Responder yo» contestás vos cuando quieras</li>
+              </ul>
             </div>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">🎯</div>
-            <h3>Calificación Automática</h3>
-            <p>Detecta intención de compra, presupuesto y zona antes de pasarte el lead.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">📅</div>
-            <h3>Agenda Integrada</h3>
-            <p>Coordina visitas directamente en tu calendario. Sin llamadas de por medio.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">📊</div>
-            <h3>Dashboard en Tiempo Real</h3>
-            <p>Seguimiento de conversaciones, leads calificados y tasas de conversión.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">🔗</div>
-            <h3>Integración Simple</h3>
-            <p>Conecta con Google Sheets, tu CRM favorito o usa nuestra base de datos.</p>
-          </div>
-
-          <div class="feature-card large">
-            <div class="feature-icon">🤖</div>
-            <h3>IA que Aprende</h3>
-            <p>Mejora con cada conversación. Entiende el contexto y responde como un humano experto.</p>
-            <div class="feature-meta">
-              <span class="meta-badge">Tasa de satisfacción: 94%</span>
-            </div>
+            <figure class="shot">
+              <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.inmo24x7.com</span></div>
+              <img src="/images/panel.webp" srcset="/images/panel-640.webp 640w, /images/panel.webp 1280w" sizes="(max-width: 1024px) 100vw, 640px" width="1280" height="900" loading="lazy" decoding="async" alt="Panel de Inmo24x7 con las consultas de la semana, cuántas llegaron fuera de horario, cuántas se calificaron, las visitas y la lista de interesados para atender hoy, cada uno con su estado." />
+              <figcaption>Imagen ilustrativa con datos de ejemplo.</figcaption>
+            </figure>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- How It Works -->
-    <section id="como-funciona" class="section-dark">
-      <div class="wrap">
-        <div class="section-header center light">
-          <span class="section-tag">Cómo Funciona</span>
-          <h2 class="section-title">En 3 pasos simples</h2>
-          <p class="section-subtitle">De la consulta a la visita coordinada, sin que tengas que hacer nada.</p>
-        </div>
-
-        <div class="steps-timeline">
-          <div class="step-item">
-            <div class="step-number">01</div>
-            <div class="step-content-timeline">
-              <h3>Llega la consulta</h3>
-              <p>Un interesado te escribe por WhatsApp a cualquier hora del día o de la noche.</p>
-              <div class="step-visual">
-                <div class="notification">
-                  <span class="notification-icon">💬</span>
-                  <div class="notification-text">
-                    <strong>Nuevo mensaje</strong>
-                    <span>"Hola, vi el depto en Palermo..."</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <!-- Features -->
+      <section id="funciones" class="section section-dark">
+        <div class="wrap">
+          <div class="section-head center">
+            <p class="eyebrow eyebrow-dark">Funciones</p>
+            <h2>Lo que hace hoy</h2>
+            <p class="sub">Vos seguís al mando. El asistente hace el trabajo repetitivo.</p>
           </div>
 
-          <div class="step-item">
-            <div class="step-number">02</div>
-            <div class="step-content-timeline">
-              <h3>Inmo24x7 responde y califica</h3>
-              <p>Responde al instante, hace preguntas estratégicas y detecta si es un lead real.</p>
-              <div class="step-tags">
-                <span class="tag-item">✓ Presupuesto</span>
-                <span class="tag-item">✓ Zona</span>
-                <span class="tag-item">✓ Intención</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="step-item">
-            <div class="step-number">03</div>
-            <div class="step-content-timeline">
-              <h3>Recibís el lead calificado</h3>
-              <p>Te llega un resumen completo por email o WhatsApp. Solo coordinás la visita y cerrás la venta.</p>
-              <div class="lead-card-preview">
-                <div class="lead-header">
-                  <span class="lead-score">Score: 9/10</span>
-                  <span class="lead-hot">🔥 Hot Lead</span>
-                </div>
-                <div class="lead-info">
-                  <p><strong>María G.</strong> - Busca compra</p>
-                  <p>📍 Palermo/Belgrano | 💰 $800k-$1.2M | 📅 Quiere visitar esta semana</p>
-                </div>
-              </div>
-            </div>
+          <div class="features">
+            <article class="feature wide">
+              <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-zap"/></svg></span>
+              <h3>Responde al instante, 24/7</h3>
+              <p>Con la API oficial de WhatsApp Business (Cloud API). Fuera de tu horario sigue atendiendo y deja la visita propuesta para que tu equipo la confirme.</p>
+            </article>
+            <article class="feature">
+              <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-filter"/></svg></span>
+              <h3>Califica a cada interesado</h3>
+              <p>Pregunta lo necesario para saber qué busca.</p>
+              <div class="chips"><span>Operación</span><span>Zona</span><span>Ambientes</span><span>Presupuesto</span><span>Nombre</span><span>Contacto</span></div>
+            </article>
+            <article class="feature">
+              <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg></span>
+              <h3>Muestra tu catálogo</h3>
+              <p>Solo propiedades que cargaste vos, con una planilla CSV o Excel, o de a una.</p>
+            </article>
+            <article class="feature">
+              <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-calendar"/></svg></span>
+              <h3>Propone horarios de visita</h3>
+              <p>Dentro del horario de tu equipo, y avisa para que la confirmen.</p>
+            </article>
+            <article class="feature">
+              <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-hand"/></svg></span>
+              <h3>Pasa la conversación a una persona</h3>
+              <p>Cuando hace falta, le avisa a tu equipo por email. Con «Responder yo» contestás vos.</p>
+            </article>
+            <article class="feature">
+              <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg></span>
+              <h3>Panel de consultas</h3>
+              <p>Todas las consultas, el estado de cada una y los números básicos de la semana.</p>
+            </article>
+            <article class="feature">
+              <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-sliders"/></svg></span>
+              <h3>Habla como tu inmobiliaria</h3>
+              <p>Elegís el nombre del asistente, el tono y las preguntas que hace.</p>
+            </article>
+            <article class="feature soon">
+              <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-code"/></svg></span>
+              <h3>Botón para tu web <span class="soon-tag">Próximamente</span></h3>
+              <p>Para que quien visita tu sitio te escriba por WhatsApp con un clic.</p>
+            </article>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Pricing Section -->
-    <section id="precios" class="section-light">
-      <div class="wrap">
-        <div class="section-header center">
-          <span class="section-tag">Precios</span>
-          <h2 class="section-title">Planes simples, sin sorpresas</h2>
-          <p class="section-subtitle">Empezá gratis. Escalá cuando crezcas.</p>
+      <!-- Pricing -->
+      <section id="precios" class="section">
+        <div class="wrap">
+          <div class="section-head center">
+            <p class="eyebrow">Precios</p>
+            <h2>Precios de lanzamiento</h2>
+            <p class="sub">Probalo 14 días gratis. Si te sirve, seguís con un precio fijo por mes.</p>
+          </div>
+
+          <div class="pricing">
+            <article class="plan">
+              <h3>Prueba gratis</h3>
+              <p class="plan-desc">14 días gratis, sin tarjeta</p>
+              <p class="price"><span class="amt">14</span><span class="per">días</span></p>
+              <ul class="ticks">
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Todo incluido</li>
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>1 número de WhatsApp</li>
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Te acompañamos en la configuración</li>
+              </ul>
+              <a href="https://wa.me/5491151060793?text=Hola%2C%20quiero%20probar%20inmo24x7%20gratis" class="btn btn-outline" target="_blank" rel="noopener">Empezar la prueba</a>
+            </article>
+
+            <article class="plan plan-pop">
+              <p class="pop-badge">Precio fundador</p>
+              <h3>Inmobiliaria</h3>
+              <p class="plan-desc">Para las primeras 10 inmobiliarias, por 12 meses</p>
+              <p class="price">
+                <span class="cur">USD</span><span class="amt">49</span><span class="per">/mes</span>
+                <s class="was" aria-label="Precio regular: USD 79 por mes">USD 79/mes</s>
+              </p>
+              <ul class="ticks">
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>1 número de WhatsApp (el tuyo o uno nuevo)</li>
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Hasta 1.000 conversaciones por mes</li>
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Catálogo de propiedades ilimitado</li>
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Panel de consultas y «Responder yo»</li>
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Personalización del asistente</li>
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Soporte por WhatsApp y email</li>
+              </ul>
+              <a href="https://wa.me/5491151060793?text=Hola%2C%20quiero%20el%20precio%20fundador%20de%20inmo24x7" class="btn btn-primary" target="_blank" rel="noopener">Quiero el precio fundador</a>
+            </article>
+
+            <article class="plan">
+              <h3>Varias sucursales</h3>
+              <p class="plan-desc">Para redes y equipos grandes</p>
+              <p class="price"><span class="amt amt-text">A medida</span></p>
+              <ul class="ticks">
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Más números de WhatsApp</li>
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Varios equipos</li>
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Lo armamos según tu operación</li>
+              </ul>
+              <a href="https://wa.me/5491151060793?text=Hola%2C%20quiero%20inmo24x7%20para%20varias%20sucursales" class="btn btn-outline" target="_blank" rel="noopener">Hablemos</a>
+            </article>
+          </div>
+          <p class="pricing-note">Una conversación es una sesión de 24 horas con la misma persona. Precios en dólares; se facturan en pesos al tipo de cambio del día. Los mensajes de WhatsApp que cobra Meta se facturan aparte, directamente por Meta. Cancelás cuando quieras.</p>
         </div>
+      </section>
 
-        <div class="pricing-grid">
-          <div class="pricing-card">
-            <div class="pricing-header">
-              <h3>Starter</h3>
-              <div class="pricing-price">
-                <span class="currency">$</span>
-                <span class="amount">0</span>
-                <span class="period">/mes</span>
-              </div>
-              <p class="pricing-desc">Para probar sin compromiso</p>
-            </div>
-            <ul class="pricing-features">
-              <li><span class="check-icon">✓</span> Hasta 50 conversaciones/mes</li>
-              <li><span class="check-icon">✓</span> 1 número de WhatsApp</li>
-              <li><span class="check-icon">✓</span> Dashboard básico</li>
-              <li><span class="check-icon">✓</span> Soporte por email</li>
-            </ul>
-            <a href="https://wa.me/+541151069793?text=Hola%20Inmo24x7%2C%20quiero%20empezar%20con%20el%20plan%20Starter" 
-               class="btn btn-outline" target="_blank" rel="noreferrer">Empezar Gratis</a>
+      <!-- FAQ -->
+      <section id="faq" class="section section-alt">
+        <div class="wrap faq-wrap">
+          <div class="section-head">
+            <p class="eyebrow">Preguntas frecuentes</p>
+            <h2>Lo que nos suelen preguntar</h2>
+            <p class="sub">¿Te quedó alguna duda? Escribinos a <a href="mailto:contacto@inmo24x7.com">contacto@inmo24x7.com</a> o por <a href="https://wa.me/5491151060793" target="_blank" rel="noopener">WhatsApp</a>.</p>
           </div>
 
-          <div class="pricing-card popular">
-            <div class="popular-badge">Más Popular</div>
-            <div class="pricing-header">
-              <h3>Profesional</h3>
-              <div class="pricing-price">
-                <span class="currency">$</span>
-                <span class="amount">99</span>
-                <span class="period">USD/mes</span>
-              </div>
-              <p class="pricing-desc">Para inmobiliarias en crecimiento</p>
-            </div>
-            <ul class="pricing-features">
-              <li><span class="check-icon">✓</span> Conversaciones ilimitadas</li>
-              <li><span class="check-icon">✓</span> Hasta 3 números de WhatsApp</li>
-              <li><span class="check-icon">✓</span> Dashboard avanzado + Analytics</li>
-              <li><span class="check-icon">✓</span> Integración con CRM</li>
-              <li><span class="check-icon">✓</span> Soporte prioritario WhatsApp</li>
-              <li><span class="check-icon">✓</span> Personalización de respuestas</li>
-            </ul>
-            <a href="https://wa.me/+541151069793?text=Hola%20Inmo24x7%2C%20quiero%20el%20plan%20Profesional" 
-               class="btn btn-primary" target="_blank" rel="noreferrer">Elegir Profesional</a>
-          </div>
-
-          <div class="pricing-card">
-            <div class="pricing-header">
-              <h3>Enterprise</h3>
-              <div class="pricing-price">
-                <span class="currency">$</span>
-                <span class="amount">249</span>
-                <span class="period">USD/mes</span>
-              </div>
-              <p class="pricing-desc">Para grandes inmobiliarias</p>
-            </div>
-            <ul class="pricing-features">
-              <li><span class="check-icon">✓</span> Todo lo de Profesional</li>
-              <li><span class="check-icon">✓</span> Números ilimitados</li>
-              <li><span class="check-icon">✓</span> API completa</li>
-              <li><span class="check-icon">✓</span> Onboarding personalizado</li>
-              <li><span class="check-icon">✓</span> Gerente de cuenta dedicado</li>
-              <li><span class="check-icon">✓</span> SLA garantizado</li>
-            </ul>
-            <a href="https://wa.me/+541151069793?text=Hola%20Inmo24x7%2C%20quiero%20información%20sobre%20el%20plan%20Enterprise" 
-               class="btn btn-outline" target="_blank" rel="noreferrer">Contactar Ventas</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="section-faq">
-      <div class="wrap">
-        <div class="section-header center">
-          <span class="section-tag">FAQ</span>
-          <h2 class="section-title">Preguntas frecuentes</h2>
-          <p class="section-subtitle">Todo lo que necesitás saber antes de empezar.</p>
-        </div>
-
-        <div class="faq-grid">
-          <div class="faq-item">
-            <h4>¿Necesito un número de WhatsApp Business?</h4>
-            <p>No es obligatorio. Podés usar tu número actual o creamos uno nuevo. Te guiamos en todo el proceso.</p>
-          </div>
-          <div class="faq-item">
-            <h4>¿Cuánto tarda la instalación?</h4>
-            <p>Menos de 30 minutos. Solo necesitás acceso a tu WhatsApp y tu listado de propiedades (puede ser un Google Sheet).</p>
-          </div>
-          <div class="faq-item">
-            <h4>¿Puedo personalizar las respuestas?</h4>
-            <p>Sí, totalmente. Desde el Back Office podés editar todos los mensajes, agregar preguntas específicas y configurar el tono de voz.</p>
-          </div>
-          <div class="faq-item">
-            <h4>¿Qué pasa si el bot no entiende algo?</h4>
-            <p>Te notifica inmediatamente por WhatsApp o email para que intervengas. Aprendemos de cada caso y mejoramos continuamente.</p>
-          </div>
-          <div class="faq-item">
-            <h4>¿Hay contrato de permanencia?</h4>
-            <p>No. Podés cancelar cuando quieras sin penalizaciones. Estamos seguros de que te va a encantar.</p>
-          </div>
-          <div class="faq-item">
-            <h4>¿Funciona con mi CRM?</h4>
-            <p>Integración nativa con los principales CRMs del mercado. Si usás uno propio, tenemos API para conectarlo.</p>
+          <div class="faq">
+            <details>
+              <summary>¿Necesito un número nuevo de WhatsApp?<svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+              <p>No. Podés usar tu número actual; te guiamos para conectarlo con WhatsApp Business. Si preferís, usás uno nuevo.</p>
+            </details>
+            <details>
+              <summary>¿Cuánto tarda en estar funcionando?<svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+              <p>Lo dejás funcionando en el día, una vez aprobada la conexión con WhatsApp.</p>
+            </details>
+            <details>
+              <summary>¿Cómo cargo mis propiedades?<svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+              <p>Con una planilla CSV o Excel, o de a una desde el panel. El asistente solo muestra propiedades de tu catálogo.</p>
+            </details>
+            <details>
+              <summary>¿Se conecta con mi CRM?<svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+              <p>Por ahora cargás tus propiedades con una planilla; estamos sumando integraciones.</p>
+            </details>
+            <details>
+              <summary>¿Qué pasa fuera del horario de mi equipo?<svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+              <p>El asistente sigue respondiendo y propone horarios de visita dentro del horario de tu equipo. Tu equipo la confirma cuando vuelve.</p>
+            </details>
+            <details>
+              <summary>¿Y si el interesado quiere hablar con una persona?<svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+              <p>El asistente pasa la conversación a tu equipo y te avisa por email. Desde el panel, con «Responder yo», contestás vos.</p>
+            </details>
+            <details>
+              <summary>¿Puedo personalizar cómo habla?<svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+              <p>Sí. Elegís el nombre del asistente, el tono y las preguntas que hace.</p>
+            </details>
+            <details>
+              <summary>¿Cuánto cuesta y hay permanencia?<svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+              <p>Los primeros 14 días son gratis y sin tarjeta. Después, USD 49 por mes con el precio fundador (para las primeras 10 inmobiliarias, por 12 meses); el precio regular es USD 79 por mes. Los mensajes que cobra Meta se facturan aparte, directamente por Meta. No hay permanencia: cancelás cuando quieras.</p>
+            </details>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- CTA Section -->
-    <section class="section-cta">
-      <div class="wrap">
-        <div class="cta-box">
-          <div class="cta-content">
-            <h2>Empezá a convertir más leads hoy</h2>
-            <p>Unite a las inmobiliarias que ya no pierden oportunidades. Demo gratuita, sin tarjeta de crédito.</p>
-            <div class="cta-buttons">
-              <a href="https://wa.me/+541151069793?text=Hola%20Inmo24x7%2C%20quiero%20mi%20demo%20gratis" 
-                 class="btn btn-lg btn-primary" target="_blank" rel="noreferrer">
-                <span>🚀 Quiero mi Demo Gratis</span>
+      <!-- Final CTA -->
+      <section class="section cta-section">
+        <div class="wrap">
+          <div class="cta">
+            <h2>Que ninguna consulta de las 23:40 quede sin respuesta</h2>
+            <p>Escribinos y te damos acceso para probarlo 14 días gratis, sin tarjeta.</p>
+            <div class="hero-cta center">
+              <a href="https://wa.me/5491151060793?text=Hola%2C%20quiero%20probar%20inmo24x7%20gratis" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+                Empezar la prueba
+                <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
               </a>
-              <a href="mailto:contacto@inmo24x7.com" class="btn btn-lg btn-secondary">
-                <span>📧 Prefiero Email</span>
+              <a href="mailto:contacto@inmo24x7.com?subject=Quiero%20conocer%20Inmo24x7" class="btn btn-ghost btn-lg">
+                <svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>
+                contacto@inmo24x7.com
               </a>
             </div>
-            <div class="cta-guarantee">
-              <span class="guarantee-icon">✓</span>
-              <span>Setup en 30 minutos. Cancelás cuando quieras.</span>
-            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- Footer -->
+    <!-- site-footer: identical on every page. Legal data: see legal-data.md -->
     <footer class="footer">
-      <div class="wrap">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <div class="footer-logo">
-              <div class="logo">🏠</div>
-              <span>Inmo24x7</span>
-            </div>
-            <p>Tu inmobiliaria atendida 24x7. Nunca más pierdas un lead.</p>
-            <div class="footer-social">
-              <a href="https://www.linkedin.com/in/jmuzikant/" target="_blank" rel="noreferrer" aria-label="LinkedIn">💼</a>
-              <a href="https://wa.me/+541151069793" target="_blank" rel="noreferrer" aria-label="WhatsApp">💬</a>
-            </div>
-          </div>
-          <div class="footer-links">
-            <h4>Producto</h4>
-            <ul>
-              <li><a href="#beneficios">Beneficios</a></li>
-              <li><a href="#como-funciona">Cómo Funciona</a></li>
-              <li><a href="#precios">Precios</a></li>
-              <li><a href="https://backoffice.inmo24x7.com/login" target="_blank">Back Office</a></li>
-            </ul>
-          </div>
-          <div class="footer-links">
-            <h4>Soporte</h4>
-            <ul>
-              <li><a href="#faq">FAQ</a></li>
-              <li><a href="mailto:contacto@inmo24x7.com">Contacto</a></li>
-              <li><a href="https://wa.me/+541151069793">WhatsApp</a></li>
-            </ul>
-          </div>
-          <div class="footer-links">
-            <h4>Legal</h4>
-            <ul>
-              <li><a href="#">Términos de Servicio</a></li>
-              <li><a href="#">Privacidad</a></li>
-            </ul>
-          </div>
+      <div class="wrap footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="brand">
+            <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M7 15 16 7.5 25 15v9a1 1 0 0 1-1 1h-5.5v-6h-5v6H8a1 1 0 0 1-1-1z" fill="currentColor"/></svg></span>
+            <span class="brand-name">Inmo24x7</span>
+          </a>
+          <p>Agente de WhatsApp para inmobiliarias: responde consultas 24x7, califica al interesado y propone visitas.</p>
         </div>
-        <div class="footer-bottom">
-          <div class="footer-copyright">
-            © 2025 <span class="mono">Inmo24x7</span> — Tu inmobiliaria atendida 24x7
-          </div>
-          <div class="footer-creator">
-            <span>Creado con 💚 por</span> 
-            <a href="https://www.linkedin.com/in/jmuzikant/" target="_blank" rel="noreferrer">Luis Muzikant</a>
-          </div>
+        <div>
+          <h2 class="footer-h">Producto</h2>
+          <ul>
+            <li><a href="/#como-funciona">Cómo funciona</a></li>
+            <li><a href="/#funciones">Funciones</a></li>
+            <li><a href="/#precios">Precios</a></li>
+            <li><a href="/#faq">Preguntas frecuentes</a></li>
+            <li><a href="https://app.inmo24x7.com">Ingresar al panel</a></li>
+          </ul>
         </div>
+        <div>
+          <h2 class="footer-h">Legal</h2>
+          <ul>
+            <li><a href="/terminos/">Términos y condiciones</a></li>
+            <li><a href="/privacidad/">Política de privacidad</a></li>
+            <li><a href="/eliminacion-de-datos/">Eliminación de datos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-h">Contacto</h2>
+          <ul>
+            <li><a href="mailto:contacto@inmo24x7.com">contacto@inmo24x7.com</a></li>
+            <li><a href="https://wa.me/5491151060793" target="_blank" rel="noopener">WhatsApp +54 9 11 5106-0793</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="wrap footer-bottom">
+        <p class="legal-line">© 2026 José Luis Muzikant · CUIT 20-26474739-3 · Ciudad Autónoma de Buenos Aires · +54 9 11 5106-0793 · <a href="mailto:contacto@inmo24x7.com">contacto@inmo24x7.com</a></p>
+        <p>inmo24x7 es un servicio de José Luis Muzikant. · Creado por <a href="https://www.linkedin.com/in/jmuzikant/" target="_blank" rel="noopener">Luis Muzikant</a></p>
       </div>
     </footer>
+    <!-- /site-footer -->
 
-    <script>
-      // Mobile menu toggle
-      const navToggle = document.querySelector('.nav-toggle');
-      const navLinks = document.querySelector('.nav-links');
-      
-      navToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        navToggle.classList.toggle('active');
-      });
+    <a href="https://wa.me/5491151060793?text=Hola%20Inmo24x7%2C%20tengo%20una%20consulta" class="wa-float" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+      <svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg>
+    </a>
 
-      // Smooth scroll for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-            navLinks.classList.remove('active');
-            navToggle.classList.remove('active');
-          }
-        });
-      });
-
-      // Add scroll effect to nav
-      const nav = document.querySelector('.nav');
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-          nav.classList.add('scrolled');
-        } else {
-          nav.classList.remove('scrolled');
-        }
-      });
-    </script>
+    <script src="/site.js" defer></script>
   </body>
 </html>
