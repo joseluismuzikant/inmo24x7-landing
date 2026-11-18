@@ -304,6 +304,13 @@ p { text-wrap: pretty; }
 .card p strong { color: var(--ink); }
 .cite { display: block; margin-top: 10px; font-size: .78rem; color: var(--ink-3); }
 
+/* Demo video: same border, radius and shadow as the cards */
+.demo-video {
+  display: block; width: 100%; max-width: 960px; height: auto; aspect-ratio: 1280 / 604; margin: 0 auto;
+  background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
 .card-ico {
   width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center;
   background: var(--green-50); color: var(--green-700);
