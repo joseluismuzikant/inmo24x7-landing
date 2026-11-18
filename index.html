@@ -310,6 +310,28 @@
         </div>
       </section>
 
+      <!-- Demo video -->
+      <section id="demo" class="section">
+        <div class="wrap">
+          <div class="section-head center">
+            <h2>Miralo en acción</h2>
+            <p class="sub">Una consulta a cualquier hora: Sofía responde, califica y le pasa la consulta lista a tu equipo.</p>
+          </div>
+          <video class="demo-video" width="1280" height="604" autoplay muted loop playsinline preload="metadata" poster="images/demo-poster.jpg" aria-label="Demo de inmo24x7: Sofía responde una consulta de alquiler, muestra propiedades del catálogo y el equipo recibe la consulta en el panel">
+            <source src="images/demo.mp4" type="video/mp4" />
+            <a href="images/demo.mp4">Ver el video de la demo</a>
+          </video>
+          <script>
+            // prefers-reduced-motion: no autoplay; show the poster with controls.
+            (function (v) {
+              if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                v.autoplay = false; v.removeAttribute('autoplay'); v.pause(); v.controls = true;
+              }
+            })(document.currentScript.previousElementSibling);
+          </script>
+        </div>
+      </section>
+
       <!-- Product -->
       <section id="producto" class="section">
         <div class="wrap">
